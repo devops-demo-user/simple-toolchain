@@ -8,6 +8,8 @@ required:
  - deploy
  - github
 
+
+
 # Github repos
 hello-world-repo:
   service_id: githubpublic
@@ -23,11 +25,11 @@ hello-world-build:
   service_id: pipeline
   parameters:
     name: "hello-world-{{name}}"
-    metadata: hello-world.pipeline.yml
-    env:
+    ui-pipeline: true
+    configuration: 
+     content: $file(hello-world.pipeline.yml)
+     env:
       HELLO_WORLD_REPO: "hello-world-repo"
-      SAUCE_USER: "{{test.parameters.username}}"
-      API_KEY: "{{test.parameters.key}}"
       CF_APP_NAME: "{{deploy.parameters.hello-world-name}}"
       DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
       DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
@@ -38,6 +40,8 @@ hello-world-build:
       PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
       PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
       PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
+     execute: true
+    services: ["hello-world-repo"]
   hidden: [form, description]
     
 

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Hello World Deploy Stage",
-    "description": "Feb Demo Microservices Stage Schema hello-world",
+    "description": "hello-world simple toolchain",
     "longDescription": "The Delivery Pipeline for Devops Services allows you to automate your continuous deployment setup hello-world.",
     "type": "object",
     "properties": {
@@ -54,7 +54,7 @@
        },        
         {
           "type": "text",
-          "readonly": true,
+          "readonly": false,
           "title": "Hello World App Name",
           "key": "hello-world-name"
         },
