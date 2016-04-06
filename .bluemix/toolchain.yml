@@ -67,4 +67,4 @@ github:
   service-category: githubpublic
   parameters:
     hello-world-repo_name: "hello-world-{{name}}"
-    hello-world-repo_url: https://github.com/HadarH/hello-world
+    hello-world-repo_url: https://github.com/devops-demo-user/hello-world
